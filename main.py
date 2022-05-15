@@ -1,7 +1,6 @@
-import os
 import openai
 
-openai.api_key = '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'
+openai.api_key = ''
 start_sequence = "\nAI:"
 restart_sequence = "\nHuman: "
 completion = openai.Completion()
@@ -18,3 +17,11 @@ def ask(question, chat_log=None):
         max_tokens=150)
     answer = response.choices[0].text.strip()
     return answer
+def fit(filepath = 'scratch.json'):
+    a = ""
+    with open(filepath, "r+") as f:
+        response = openai.File.create(file=f, purpose='fine-tune')
+        a = response["id"]
+    a = openai.FineTune.create(training_file= a, model= 'davinci')
+    openai.FineTune.retrieve(id= a["id"])
+
