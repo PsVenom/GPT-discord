@@ -42,21 +42,24 @@ class sext(commands.Cog):
         await ctx.send('Ram ram cutie UwU <3')
 
         answer=0
-
+        
         channel = ctx.message.channel
 
         while True:
 
-            timeref = time()
+            f=0
             
             def check(m):
                 return m.author == ctx.author
 
-            msg = await bots.wait_for('message', check=check)
-            msg_cont = msg.content
+            try:
+                msg = await bots.wait_for('message', timeout=5.0, check=check)
+                msg_cont = msg.content
+            except:
+                f=1
 
             a=msg_cont=='end'
-            b=time()-timeref>=10
+            b=f==1
 
             if a or b:
                 await channel.send('bbye baby <3 UwU')
