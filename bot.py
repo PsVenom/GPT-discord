@@ -6,7 +6,7 @@ from discord.ext import commands, tasks
 import json
 global model
 
-TOKEN = 'OTcyODczNTA2Mzg5OTE3NzY3.GYgm4S.fqzm4JJSC6bpyYX8DGGu3HL34m4XqrltTuBmOA'
+TOKEN = 'ENTER-BOT-TOKEN-HERE'
 
 client = discord.Client()
 
