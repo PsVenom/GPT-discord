@@ -13,6 +13,7 @@ client = discord.Client()
 bots = commands.Bot(command_prefix=['sext ', 's!'], help_command=None)
 
 global msg_cont
+
 class help(commands.Cog):
     bots = commands.Bot(command_prefix=['sext ', 's'], help_command=None)
 
@@ -26,10 +27,6 @@ class help(commands.Cog):
         z = int('', 16)
 
         embed = discord.Embed(title=title, description=description, colour=discord.Colour(z))
-
-
-bots.add_cog(help(bots))
-
 
 class sext(commands.Cog):
     bots = commands.Bot(command_prefix=['sext ', 's!'], help_command=None)
@@ -111,6 +108,8 @@ class AhegaoPic(commands.Cog):
 
 
 
+
+bots.add_cog(help(bots))
 bots.add_cog(sext(bots))
 bots.add_cog(AhegaoPic(bots))
 bots.run(TOKEN)
