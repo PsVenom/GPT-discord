@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import urllib
 import cv2
 
-openai.api_key = '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'
+openai.api_key = 'ENTER-OPENAI-TOKEN-HERE'
 completion = openai.Completion()
 header= {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) ' 
       'AppleWebKit/537.11 (KHTML, like Gecko) '
