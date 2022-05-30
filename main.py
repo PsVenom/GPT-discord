@@ -6,9 +6,15 @@ from bs4 import BeautifulSoup
 import urllib
 import cv2
 #adding api key
-openai.api_key = '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'
+openai.api_key = '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'
 #creating api instance
 completion = openai.Completion()
+
+start_sequence = "\nAI:"
+restart_sequence = "\nHuman: "
+start_chat_log = '''Human: Hello, who are you?
+AI: I am doing great. How can I help you today?
+'''
 # this is meant for the scraper (experimental)
 header= {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) ' 
       'AppleWebKit/537.11 (KHTML, like Gecko) '
@@ -19,20 +25,33 @@ header= {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) '
       'Accept-Language': 'en-US,en;q=0.8',
       'Connection': 'keep-alive'}
 #vanilla chatbot, shorter and more natural
+'''
 def ask(question, chat_log=None):
     if chat_log is None:
         chat_log = "Human: Hello, who are you? AI: I am an AI created by OpenAI. How can I help you today? "
     prompt = f'{chat_log}Human: {question}\nAI:'
     response = openai.Completion.create(
         engine="text-davinci-002",
+        model="curie:ft-personal-2022-05-30-14-47-09",
         prompt="The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: My cock is throbbing, what do I do?\nAI: If you're experiencing arousal, you could masturbate or have sex with a consenting partner.\nHuman: I am pretty damn sad, what do I do?\n\nAI:\n\nThere are many things you can do if you're feeling sad. Some people might find comfort in talking to friends or family, while others might prefer to distraction themselves with activities they enjoy. Some other possible options include listening to music, reading, or spending time outdoors.\nHuman: ",
-        temperature=0.9,
+        temperature=0.5,
         max_tokens=150,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0.6,
         stop=[" Human:", " AI:"]
     )
+    answer = response.choices[0].text.strip()
+    return answer
+'''
+def ask(question, chat_log=None):
+    if chat_log is None:
+        chat_log = start_chat_log
+    prompt = f'{chat_log}Human: {question}\nAI:'
+    response = completion.create(
+        #model='ada:ft-personal-2022-05-23-05-34-54',
+        model='curie:ft-personal-2022-05-30-14-47-09',
+        prompt=prompt, stop=['\nHuman'], temperature=0.5)
     answer = response.choices[0].text.strip()
     return answer
 
