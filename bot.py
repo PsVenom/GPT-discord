@@ -8,7 +8,7 @@ import random
 global model
 import nextcord
 #discord api token
-TOKEN = 'OTcyODczNTA2Mzg5OTE3NzY3.GHNR-Z.oGM6m6dd4Pf_A38hiCnHeBJpwKYYLq0A6CmQ0g'
+TOKEN = '<token>'
 #initialise api object
 client = discord.Client()
 #initialise bot
