@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import urllib
 import cv2
 #adding api key
-openai.api_key = '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'
+openai.api_key = '<key>'
 #creating api instance
 completion = openai.Completion()
 
