@@ -2,9 +2,9 @@
 
 # Ahegaobot-discord
 A discord chatbot with several other features!
-
-## Installation
 </div>
+## Installation
+
 - Run the command to install all the dependencies
   ```
   pip install -r requirements.txt
