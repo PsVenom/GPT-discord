@@ -4,6 +4,7 @@
 A discord chatbot with several other features!
 
 ## Installation
+</div>
 - Run the command to install all the dependencies
   ```
   pip install -r requirements.txt
