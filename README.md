@@ -1,3 +1,5 @@
+<div align="center">
+
 # Ahegaobot-discord
 A discord chatbot with several other features!
 
