@@ -1,8 +1,6 @@
-<div align="center">
-
 # Ahegaobot-discord
 A discord chatbot with several other features!
-</div>
+
 ## Installation
 
 - Run the command to install all the dependencies
