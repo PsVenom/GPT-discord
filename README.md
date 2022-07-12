@@ -1,7 +1,7 @@
 <div align="center">
 
-# Ahegaobot-discord
-A discord chatbot with several other features!
+# GPT-discord
+A discord chatbot powered by Openai's GPT-3, with several other features!
 
 </div>
   
