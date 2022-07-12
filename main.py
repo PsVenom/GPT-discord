@@ -55,18 +55,8 @@ def ask(question, chat_log=None):
     answer = response.choices[0].text.strip()
     return answer
 
-#crackhead version. more context focussed, but increadibly retarded
-def askCrack(question, chat_log=None):
-    if chat_log is None:
-        chat_log = "Human: Hello, who are you? AI: I am an AI created by OpenAI. How can I help you today? "
-    prompt = f'{chat_log}Human: {question}\nAI:'
-    response = completion.create(prompt=prompt, engine="davinci", stop=['\nHuman'], temperature=0.9,
-        top_p=1, frequency_penalty=0, presence_penalty=0.6, best_of=1,
-        max_tokens=70)
-    answer = response.choices[0].text.strip()
-    return answer
-#experimental, uses url scraping using beautifulsoup
-def scraper(url_link = "https://www.google.com/search?q=ahegao&rlz=1C1YQLS_enIN994IN994&sxsrf=ALiCzsYUc788mZWD-tAhRGNmklg8-rrpAw:1652733172219&source=lnms&tbm=isch&sa=X&ved=2ahUKEwifzY3t7uT3AhXEjOYKHXroCx0Q_AUoAXoECAIQAw", remove = 0):
+#experimental, uses url scraping using beautifulsoup, if you want to integrate it
+def scraper(url_link, remove = 0):
  a = []
  request = urllib.request.Request(url_link, None, header)  # The assembled request
  response = urllib.request.urlopen(request)
@@ -77,9 +67,6 @@ def scraper(url_link = "https://www.google.com/search?q=ahegao&rlz=1C1YQLS_enIN9
      a.append(item['src'])
  return a[random.randint(remove, len(a))]
 
-#uses the ahegao dataset to get images
-async def getImg(fp = 'danbooru2020-ahegao-handpicked-cropped'):
-    a = list(os.listdir(fp))
-    return fp+"/"+a[random.randint(0, len(a))]
+
 
 
