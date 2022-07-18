@@ -16,9 +16,9 @@ A discord chatbot powered by Openai's GPT-3, with several other features!
   ```
   pip install -r requirements.txt
   ```
-- Edit the `.env` file and type in your discord bot token and api key respectively
 - Create an account on [OpenAI](https://openai.com/api/) and generate an API key
-- Paste the api key in the `openai.api_key` variable in [main.py](main.py)
+- Duplicate & Rename the `.env.example` file to `.env`
+- Paste your `bot token` and `openai api key` in the .env file
 - Run `bot.py` and the bot should be online
 - To enable tts, you'll have to manually install ffmpeg by following [this](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/) tutorial 
 
