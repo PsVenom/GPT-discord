@@ -1,0 +1,6 @@
+discord.py
+discord-py-interactions
+python-dotenv
+openai
+bs4
+urllib3
