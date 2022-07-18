@@ -19,7 +19,7 @@ A discord chatbot powered by Openai's GPT-3, with several other features!
 - Create an account on [OpenAI](https://openai.com/api/) and generate an API key
 - Duplicate & Rename the `.env.example` file to `.env`
 - Paste your `bot token` and `openai api key` in the .env file
-- Run `bot.py` and the bot should be online
+- Run `bot.py` or `bot_slash.py` and the bot should be online
 - To enable tts, you'll have to manually install ffmpeg by following [this](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/) tutorial 
 - To use a custom GPT-3 engine, edit the variable in line 32 of [main.py](main.py). Replace the existing value with a model name from [here](https://beta.openai.com/docs/models/gpt-3)
 
