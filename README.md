@@ -8,7 +8,7 @@ A discord chatbot powered by Openai's GPT-3, with several other features!
 # So what can the bot do?
 - For starters, it can start converstations that feel almost surreal. All of that is thanks to OpenAI's GPT3, a popular large language model
 - The bot can also respond to you messages in a Voice Chat by using ffmpeg and Google TTS
-- Can perform tts for those awkard moments when you just can't get you microphone to work
+- Can perform tts for those awkard moments when you just can't get your microphone to work
   
 ## Installation
 
